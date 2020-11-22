@@ -12,10 +12,10 @@ namespace masterproject.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Procduct
+    public partial class Product
     {
         public int id { get; set; }
-        public string product { get; set; }
+        public string product1 { get; set; }
         public Nullable<decimal> price { get; set; }
         public string age { get; set; }
     }

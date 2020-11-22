@@ -15,7 +15,7 @@
           <Property Name="phone" Type="nvarchar" MaxLength="50" />
           <Property Name="time" Type="date" />
         </EntityType>
-        <EntityType Name="Procduct">
+        <EntityType Name="Product">
           <Key>
             <PropertyRef Name="id" />
           </Key>
@@ -26,7 +26,7 @@
         </EntityType>
         <EntityContainer Name="MaDBModelStoreContainer">
           <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Procduct" EntityType="Self.Procduct" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -44,14 +44,14 @@
         </EntityType>
         <EntityContainer Name="MaDBEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Customers" EntityType="Self.Customer" />
-          <EntitySet Name="Procducts" EntityType="MaDBModel.Procduct" />
+          <EntitySet Name="Products" EntityType="MaDBModel.Product" />
         </EntityContainer>
-        <EntityType Name="Procduct">
+        <EntityType Name="Product">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="product" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="product1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="price" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="age" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
@@ -72,12 +72,12 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Procducts">
-            <EntityTypeMapping TypeName="MaDBModel.Procduct">
-              <MappingFragment StoreEntitySet="Procduct">
+          <EntitySetMapping Name="Products">
+            <EntityTypeMapping TypeName="MaDBModel.Product">
+              <MappingFragment StoreEntitySet="Product">
                 <ScalarProperty Name="age" ColumnName="age" />
                 <ScalarProperty Name="price" ColumnName="price" />
-                <ScalarProperty Name="product" ColumnName="product" />
+                <ScalarProperty Name="product1" ColumnName="product" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
