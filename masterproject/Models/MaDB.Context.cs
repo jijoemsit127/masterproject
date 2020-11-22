@@ -26,5 +26,6 @@ namespace masterproject.Models
         }
     
         public virtual DbSet<Customer> Customers { get; set; }
+        public virtual DbSet<Procduct> Procducts { get; set; }
     }
 }

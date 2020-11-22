@@ -4,13 +4,24 @@
     ViewBag.Title = "Create";
 }
 
+
 <h2>Create</h2>
 
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
-    @Html.AntiForgeryToken()
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="/resources/demos/style.css">
+    </head>
     
+
+
+    @Html.AntiForgeryToken()
+
+    <script src="~/Content/jquery-ui.min.js"></script>
     <div class="form-horizontal">
         <h4>Customer</h4>
         <hr />
@@ -42,8 +53,8 @@
         <div class="form-group">
             @Html.LabelFor(model => model.time, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.time, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.time, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.time, new { htmlAttributes = new { @class = "datepicker" } })
+                
             </div>
         </div>
 
@@ -60,5 +71,12 @@
 </div>
 
 @section Scripts {
+
+    <script>
+        $(function () {
+            $(".datepicker").datepicker();
+        });
+    </script>
+    <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
     @Scripts.Render("~/bundles/jqueryval")
 }
