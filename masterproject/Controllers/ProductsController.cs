@@ -16,9 +16,9 @@ namespace masterproject.Controllers
         private MaDBEntities db = new MaDBEntities();
 
         // GET: Products
-        public async Task<ActionResult> Index()
+        public ActionResult Index(string searching)
         {
-            return View(await db.Products.ToListAsync());
+            return View(db.Products.Where(x =>x.product1.Contains(searching) || searching == null).ToList());
         }
 
         // GET: Products/Details/5
